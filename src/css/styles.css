@@ -1,2 +1,7 @@
+html, body {
+    height: 100%;
+}
 
-
+#bacman-game {
+    height: 90%;
+}

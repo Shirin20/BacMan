@@ -1,2 +1,2 @@
-import './game-maze.js'
+import './maze-view.js'
 console.log('game maze')

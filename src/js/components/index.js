@@ -5,12 +5,12 @@
  * @version 1.0.0
  */
 
-import './game-maze/index.js'
+import './maze-view/index.js'
 import { Maze } from '../../model/Maze.js'
 
 
 const bacMan = document.querySelector('#bacman-game')
-const gameMaze = document.createElement('game-maze')
+const gameMaze = document.createElement('maze-view')
 const maze = new Maze()
 
 gameMaze.setMaze(maze)

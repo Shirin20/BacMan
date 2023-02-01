@@ -5,20 +5,29 @@ template.innerHTML = `
   .game-board {
     margin: 0;
     background-color:black;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  .game-div {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
   }
 </style>
- <div>
+ <div class="game-div">
 <canvas class="game-board"></canvas>
+
 </div>
 `
-customElements.define('game-maze',
+customElements.define('maze-view',
 
   class extends HTMLElement {
     #gameBoard
     #modelMaze
     gameCanvas
-    tileWidth = 10
-    tileHeight = 10
+    tileWidth = 16
+    tileHeight = 12
     x = 0
     y = 0
 
@@ -29,12 +38,15 @@ customElements.define('game-maze',
         .appendChild(template.content.cloneNode(true))
       this.#gameBoard = this.shadowRoot.querySelector('.game-board')
       this.gameCanvas = this.#gameBoard.getContext('2d')
-      this.gameCanvas.width = innerWidth
-      this.gameCanvas.hight = innerHeight
     }
 
     setMaze (modelMaze) {
       this.#modelMaze = modelMaze
+      this.tileWidth = this.#gameBoard.width / modelMaze.width
+      this.tileHeight = this.#gameBoard.height / modelMaze.height
+
+      this.tileWidth = this.tileHeight = modelMaze.width > modelMaze.height ?  modelMaze.height : modelMaze.width
+
       console.log('setMaze')
     }
 
