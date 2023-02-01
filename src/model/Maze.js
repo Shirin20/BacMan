@@ -11,7 +11,7 @@ export class Maze {
             "- -------------- -" +
             "- -------------- -" +
             "- -------------- -" +
-            "- -------------- -" +
+            "- ------p------- -" +
             "- -------------- -" +
             "- -------------- -" +
             "- -------------- -" +
@@ -32,6 +32,9 @@ export class Maze {
         if (posString === "-")
           isWall = true
         this.#map[x][y] = new MazePosition(Math.random() > 0.25, isWall)
+
+        if (posString === "p")
+
       }
     }
   }

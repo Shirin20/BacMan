@@ -45,7 +45,7 @@ customElements.define('maze-view',
       this.tileWidth = this.#gameBoard.width / modelMaze.width
       this.tileHeight = this.#gameBoard.height / modelMaze.height
 
-      this.tileWidth = this.tileHeight = modelMaze.width > modelMaze.height ?  modelMaze.height : modelMaze.width
+      this.tileWidth = this.tileHeight = modelMaze.width > modelMaze.height ? modelMaze.height : modelMaze.width
 
       console.log('setMaze')
     }
